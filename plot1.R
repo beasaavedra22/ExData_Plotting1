@@ -4,6 +4,12 @@ data<-read.table("household_power_consumption.txt",header=TRUE, sep = ";")
 d<-subset(data,Date=="1/2/2007" | Date == "2/2/2007")
 #Converting data to numeric
 d$Global_active_power<-as.numeric(as.character(d$Global_active_power))
+
+#Plotting data
+#Only one figure is going to be plot and margins adjusted
+par(mfrow=c(1,1),mar=c(4,4,2,2))
+#To display weekdays
+Sys.setlocale("LC_ALL","C")
 #Printing histogram
 par(mfrow=c(1,1))
 hist(d$Global_active_power,col="red", xlab = "Global active power (kilowatts)",main = "Global active power",yaxt= "n")
