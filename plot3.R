@@ -10,8 +10,8 @@ df<- data.frame(date=a, val1=as.numeric(as.character(d$Sub_metering_1)),
              val3=as.numeric(as.character(d$Sub_metering_3)))
 
 #Plot different data with lines
-#Only one figure is going to be plot and margins adjusted
-par(mfrow=c(1,1),mar=c(2,4,2,2))
+#Only one figure is going to be plot and margins adjusted, reduce font size
+par(mfrow=c(1,1),mar=c(4,4,2,2),cex.main=0.9,cex.lab=0.9,cex.axis=0.9)
 #To display weekdays
 Sys.setlocale("LC_ALL","C")
 #Plot the axis, title...but no line
@@ -26,5 +26,6 @@ legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
        lwd=c(2.5,2.5,2.5),col=c("black","red","blue"),cex=0.75) 
 
 #Saving plot into png file
+#Background is set to white, since transparency is not covered in the lesson
 dev.copy(png,file = "plot3.png", width=480, height=480) 
 dev.off()

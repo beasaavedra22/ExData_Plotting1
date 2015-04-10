@@ -19,7 +19,7 @@ df<- data.frame(date=a, valGAP = d$Global_active_power,
                 valGRP = d$Global_reactive_power)
 
 #Setting multiplot
-par(mfrow=c(2,2))
+par(mfrow=c(2,2),cex.axis=0.9,cex.lab=0.9)
 #To display weekdays
 Sys.setlocale("LC_ALL","C")
 
@@ -45,6 +45,7 @@ plot(df$date,df$valGRP,type="n",ylab="Global_reactive_power",xlab="datetime")
 lines(df$date,df$valGRP)
 
 #Saving plot into png file
+#Background is set to white, since transparency is not covered in the lesson
 dev.copy(png,file = "plot4.png", width=480, height=480) 
 dev.off()
 

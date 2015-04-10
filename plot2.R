@@ -10,14 +10,16 @@ a <- strptime(paste(d$Date, d$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 df<- data.frame(date=a, val=d$Global_active_power)
 
 #Plotting data
-#Only one figure is going to be plot and margins adjusted
-par(mfrow=c(1,1),mar=c(2,4,2,2))
+#Only one figure is going to be plot and margins adjusted, reduce font size
+par(mfrow=c(1,1),mar=c(4,4,2,2),cex.main=0.9,cex.lab=0.9,cex.axis=0.9)
 #To display weekdays
 Sys.setlocale("LC_ALL","C")
 #Plot the axis, title...but no line
 plot(df$date,df$val,type="n",ylab = "Global active power (kilowatts)",xlab="")
 #Plot data
 lines(df$date,df$val)
+
 #Saving plot into png file
+#Background is set to white, since transparency is not covered in the lesson
 dev.copy(png,file = "plot2.png", width=480, height=480) 
 dev.off()
