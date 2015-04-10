@@ -11,7 +11,7 @@ df<- data.frame(date=a, val=d$Global_active_power)
 
 #Plotting data
 #Only one figure is going to be plot and margins adjusted, reduce font size
-par(mfrow=c(1,1),mar=c(4,4,2,2),cex.main=0.9,cex.lab=0.9,cex.axis=0.9)
+par(mfrow=c(1,1),mar=c(4,4,2,2),cex.main=0.9,cex.lab=0.65,cex.axis=0.75)
 #To display weekdays
 Sys.setlocale("LC_ALL","C")
 #Plot the axis, title...but no line

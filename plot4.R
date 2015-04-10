@@ -19,12 +19,12 @@ df<- data.frame(date=a, valGAP = d$Global_active_power,
                 valGRP = d$Global_reactive_power)
 
 #Setting multiplot
-par(mfrow=c(2,2),cex.axis=0.9,cex.lab=0.9)
+par(mfrow=c(2,2),cex.axis=0.65,cex.lab=0.65)
 #To display weekdays
 Sys.setlocale("LC_ALL","C")
 
 #Plot #1
-plot(df$date,df$valGAP,type="n",ylab = "Global active power (kilowatts)",xlab="")
+plot(df$date,df$valGAP,type="n",ylab = "Global active power",xlab="")
 lines(df$date,df$valGAP)
 
 #Plot #2
@@ -38,7 +38,7 @@ lines(df$date,df$valS2,col="red")
 lines(df$date,df$valS3,col="blue")
 legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),
        lty=c(1,1,1),
-       lwd=c(2.5,2.5,2.5),col=c("black","red","blue"),cex=0.5) 
+       lwd=c(2.5,2.5,2.5),col=c("black","red","blue"),cex=0.5,bty="n") 
 
 #Plot #4
 plot(df$date,df$valGRP,type="n",ylab="Global_reactive_power",xlab="datetime")
